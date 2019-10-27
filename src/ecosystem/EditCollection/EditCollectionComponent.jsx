@@ -1,21 +1,25 @@
 import React from 'react'
 
 import Header from 'organisms/Header'
+import CollectionForm from 'organisms/CollectionForm'
 import DefaultTemplate from 'templates/Default'
-import SubMenu from 'molecules/SubMenu'
+import CollectionSubMenu from 'organisms/CollectionSubMenu'
 
-const Content = () => 'gg-edit'
+const Content = ({ onSubmit, collection }) => (
+  <>
+    <h1>Editar a Coleção</h1>
+    <CollectionForm onSubmit={onSubmit} initialValues={collection} />
+  </>
+)
 
-const EditCollectionComponent = () => {
-  const subMenu = (
-    <SubMenu
-      links={[
-        { href: '/collections', text: 'Listar todos os coleçoes' },
-        { href: '/add-collection', text: 'Adicionar uma nova coleção' },
-      ]}
+const EditCollectionComponent = ({ onSubmit, collection }) => {
+  return (
+    <DefaultTemplate
+      header={<Header />}
+      subMenu={<CollectionSubMenu />}
+      content={<Content onSubmit={onSubmit} collection={collection} />}
     />
   )
-  return <DefaultTemplate header={<Header />} subMenu={subMenu} ontent={<Content />} />
 }
 
 export default EditCollectionComponent

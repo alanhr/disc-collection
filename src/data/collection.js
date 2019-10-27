@@ -6,7 +6,7 @@ export const getCollections = () =>
     try {
       const reponse = await axios.get('/collection')
 
-      resolve(reponse.data)
+      resolve(reponse)
     } catch (error) {
       reject(error)
     }
@@ -17,7 +17,29 @@ export const getCollectionById = id =>
     try {
       const reponse = await axios.get(`/collection/${id}`)
 
-      resolve(reponse.data)
+      resolve(reponse)
+    } catch (error) {
+      reject(error)
+    }
+  })
+
+export const addCollection = collection =>
+  task(async ({ resolve, reject }) => {
+    try {
+      const reponse = await axios.post(`/collection`, collection)
+
+      resolve(reponse)
+    } catch (error) {
+      reject(error)
+    }
+  })
+
+export const updateCollection = (id, collection) =>
+  task(async ({ resolve, reject }) => {
+    try {
+      const reponse = await axios.put(`/collection/${id}`, collection)
+
+      resolve(reponse)
     } catch (error) {
       reject(error)
     }
@@ -26,4 +48,6 @@ export const getCollectionById = id =>
 export default {
   getCollections,
   getCollectionById,
+  addCollection,
+  updateCollection,
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { getCollections } from 'data/collection'
 
@@ -12,11 +11,11 @@ const CollectionsContainer = ({ collections }) => {
 CollectionsContainer.propTypes = {}
 
 CollectionsContainer.getInitialProps = async () => {
-  const collections = await getCollections()
+  const { data } = await getCollections()
     .run()
     .promise()
 
-  return { collections }
+  return { collections: data }
 }
 
 export default CollectionsContainer

@@ -1,21 +1,21 @@
 import React from 'react'
 
 import Header from 'organisms/Header'
+import CollectionForm from 'organisms/CollectionForm'
 import DefaultTemplate from 'templates/Default'
-import SubMenu from 'molecules/SubMenu'
+import CollectionSubMenu from 'organisms/CollectionSubMenu'
 
-const Content = () => 'gg-add'
+const Content = ({ onSubmit }) => (
+  <>
+    <h1>Adicionar uma Coleção</h1>
+    <CollectionForm onSubmit={onSubmit} />
+  </>
+)
 
-const AddCollectionComponent = () => {
-  const subMenu = (
-    <SubMenu
-      links={[
-        { href: '/collections', text: 'Listar todos os coleçoes' },
-        { href: '/add-collection', text: 'Adicionar uma nova coleção' },
-      ]}
-    />
+const AddCollectionComponent = ({ onSubmit }) => {
+  return (
+    <DefaultTemplate header={<Header />} subMenu={<CollectionSubMenu />} content={<Content onSubmit={onSubmit} />} />
   )
-  return <DefaultTemplate header={<Header />} subMenu={subMenu} ontent={<Content />} />
 }
 
 export default AddCollectionComponent

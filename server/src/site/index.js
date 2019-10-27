@@ -5,8 +5,8 @@ export default app => {
   const nextApp = next({ dev })
   const nextHandler = nextApp.getRequestHandler()
 
-  app.get('/edit-collection/:id', (req, res) => {
-    return nextApp.render(req, res, '/edit-collection', { id: req.params.id })
+  app.get('/collection/edit/:id', (req, res) => {
+    return nextApp.render(req, res, '/collection/edit', { id: req.params.id })
   })
 
   app.all('*', nextHandler)

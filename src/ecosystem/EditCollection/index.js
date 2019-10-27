@@ -1,3 +1,6 @@
 import EditCollectionComponent from './EditCollectionComponent'
+import EditCollectionContainer from './EditCollectionContainer'
 
-export default EditCollectionComponent
+export default EditCollectionContainer
+
+export { EditCollectionComponent }
