@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'disc-collection-db'
+      MYSQL_USER: 'disc'
+      MYSQL_PASSWORD: 'disc@123'
+      MYSQL_ROOT_PASSWORD: 'disc@123'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - dic-db:/var/lib/mysql
+volumes:
+  dic-db:
