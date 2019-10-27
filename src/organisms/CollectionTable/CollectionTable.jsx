@@ -21,7 +21,7 @@ const buildRowsWithCells = prepareRow =>
         <tr {...row.getRowProps()}>
           {buildCells(row.cells)}
           <Td>
-            <NextLink href={`/edit-collection?id=${getId(row)}`} as={`/edit-collection/${getId(row)}`}>
+            <NextLink href={`/collection/edit?id=${getId(row)}`} as={`/collection/edit/${getId(row)}`}>
               <Link>Editar</Link>
             </NextLink>
           </Td>
@@ -29,23 +29,20 @@ const buildRowsWithCells = prepareRow =>
       ),
   )
 
-const CollectionTable = ({ collections }) => {
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Nome',
-        accessor: 'name',
-      },
-      {
-        Header: 'Descrição',
-        accessor: 'description',
-      },
-    ],
-    [],
-  )
+const tableCollumns = [
+  {
+    Header: 'Nome',
+    accessor: 'name',
+  },
+  {
+    Header: 'Descrição',
+    accessor: 'description',
+  },
+]
 
+const CollectionTable = ({ collections }) => {
   const { getTableProps, getTableBodyProps, headers, rows, prepareRow } = useTable({
-    columns,
+    columns: tableCollumns,
     data: collections,
   })
 

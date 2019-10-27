@@ -14,7 +14,7 @@ const Header = () => {
           <NextLink href="/">
             <Link>Discos</Link>
           </NextLink>
-          <NextLink href="/collections">
+          <NextLink href="/collection">
             <Link>Coleções</Link>
           </NextLink>
         </Nav>
