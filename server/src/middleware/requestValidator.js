@@ -12,7 +12,7 @@ const formatError = R.compose(
   R.pick(['message', 'path']),
 )
 
-const buldErros = R.reduce(
+const buildErros = R.reduce(
   (acc, elm) =>
     R.compose(
       R.mergeRight(acc),
@@ -27,7 +27,7 @@ export default (schema, field = 'body') => (req, res, next) => {
       isEmpty,
       R.identity,
       R.compose(
-        buldErros,
+        buildErros,
         R.prop('details'),
       ),
     ),
