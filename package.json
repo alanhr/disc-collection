@@ -7,8 +7,8 @@
     "dev:watch": "nodemon",
     "build": "yarn build:next && yarn build:server",
     "build:next": "next build",
-    "build:server": "cross-env NODE_ENV=production babel server.js --out-dir .next/dist",
-    "start": "cross-env NODE_ENV=production node .next/dist/server.js",
+    "build:server": "cross-env NODE_ENV=production babel server/src --out-dir .server",
+    "start": "cross-env NODE_ENV=production node .server/index.js",
     "test": "jest"
   },
   "dependencies": {
@@ -33,7 +33,10 @@
     "validatorjs": "^3.17.1"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
     "babel-jest": "^24.9.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-styled-components": "^1.10.6",

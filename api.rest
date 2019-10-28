@@ -1,0 +1,26 @@
+@url =  http://localhost:3000/api
+
+# @name Add_Collection
+POST {{url}}/collection HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+###
+# @name Get_Collection_By_Id
+GET  {{url}}/collection/1 HTTP/1.1
+
+###
+# @name Delete_Collection_By_Id
+DELETE {{url}}/collection/5 HTTP/1.1
+
+###
+# @name Update_Collection_By_Id
+PUT {{url}}/collection/1 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Samba"
+}

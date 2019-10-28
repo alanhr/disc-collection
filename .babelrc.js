@@ -12,7 +12,7 @@ module.exports = {
     [
       'module-resolver',
       {
-        root: ['./src','./server/src']
+        root: ['./src'],
       },
     ],
   ],
@@ -24,7 +24,7 @@ module.exports = {
       presets: [
         'next/babel',
         [
-          'env',
+          '@babel/preset-env',
           {
             targets: {
               node: 'current',
@@ -38,7 +38,7 @@ module.exports = {
         [
           'next/babel',
           {
-            'preset-env': {
+            '@babel/preset-env': {
               modules: 'commonjs',
             },
           },
