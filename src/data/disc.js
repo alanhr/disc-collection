@@ -1,10 +1,16 @@
 import { task } from 'folktale/concurrency/task'
+import { isEmpty, not } from 'ramda'
 import axios from './axios'
 
-export const getDiscs = () =>
+export const getDiscs = (filter = '') =>
   task(async ({ resolve, reject }) => {
     try {
-      const reponse = await axios.get('/disc')
+      let url = '/disc'
+
+      if (not(isEmpty(filter))) {
+        url = `${url}?q=${filter}`
+      }
+      const reponse = await axios.get(url)
 
       resolve(reponse)
     } catch (error) {

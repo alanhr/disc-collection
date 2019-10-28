@@ -23,7 +23,15 @@ const DiscsContainer = ({ discs }) => {
     }
   }
 
-  return <DiscsComponent discs={discsState} onDelete={onDelete} />
+  const onSearch = async ({ search }) => {
+    const { data } = await getDiscs(search)
+      .run()
+      .promise()
+
+    setDiscs(data)
+  }
+
+  return <DiscsComponent discs={discsState} onDelete={onDelete} onSearch={onSearch} />
 }
 
 DiscsContainer.getInitialProps = async () => {
