@@ -12,7 +12,7 @@ const AddCollectionContainer = () => {
       .run()
       .promise()
 
-    alert('Collection was add !!')
+    alert('A coleção foi adicionada!!')
 
     router.push('/collection')
   }

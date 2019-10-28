@@ -1,6 +1,7 @@
 import React from 'react'
 import { pick } from 'ramda'
 import { useRouter } from 'next/router'
+
 import { getCollectionById, updateCollection } from 'data/collection'
 
 import EditCollectionComponent from './EditCollectionComponent'
@@ -13,7 +14,7 @@ const EditCollectionContainer = ({ collection }) => {
       .run()
       .promise()
 
-    alert('Collection was edited !!')
+    alert('A coleção foi editada!!')
 
     router.push('/collection')
   }
