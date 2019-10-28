@@ -11,7 +11,7 @@ const Header = () => {
     <HeaderWrapper>
       <Container>
         <Nav>
-          <NextLink href="/">
+          <NextLink href="/disc" as="/">
             <Link>Discos</Link>
           </NextLink>
           <NextLink href="/collection">

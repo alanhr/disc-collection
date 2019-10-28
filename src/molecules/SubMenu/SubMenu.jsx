@@ -7,8 +7,8 @@ import Link from 'atoms/Link'
 
 import { SubMenuWrapper } from './styles'
 
-const buildLinks = map(({ href, text }) => (
-  <NextLink key={href} href={href}>
+const buildLinks = map(({ href, text, as = null }) => (
+  <NextLink key={href} href={href} as={as}>
     <Link>{text}</Link>
   </NextLink>
 ))
@@ -22,6 +22,7 @@ SubMenu.propTypes = {
     PropTypes.shape({
       href: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
+      as: PropTypes.string,
     }),
   ).isRequired,
 }
