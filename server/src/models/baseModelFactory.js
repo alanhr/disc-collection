@@ -4,7 +4,7 @@ import { task } from 'folktale/concurrency/task'
 
 import isEmpty from '../utils/isEmpty'
 
-const resultFn = (resolve, reject) => (error, results) => {
+export const resultFn = (resolve, reject) => (error, results) => {
   if (R.not(isEmpty(error))) {
     return reject(Result.Error(error.message))
   }

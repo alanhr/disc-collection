@@ -9,6 +9,14 @@ export default app => {
     return nextApp.render(req, res, '/collection/edit', { id: req.params.id })
   })
 
+  app.get('/disc/edit/:id', (req, res) => {
+    return nextApp.render(req, res, '/disc/edit', { id: req.params.id })
+  })
+
+  app.get('/', (req, res) => {
+    return nextApp.render(req, res, '/disc', req.query)
+  })
+
   app.all('*', nextHandler)
 
   return nextApp
