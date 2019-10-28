@@ -8,7 +8,7 @@ const AddCollectionContainer = () => {
   const router = useRouter()
 
   const onSubmit = async data => {
-    addCollection(data)
+    await addCollection(data)
       .run()
       .promise()
 

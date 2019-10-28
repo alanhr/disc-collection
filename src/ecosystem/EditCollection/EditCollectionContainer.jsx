@@ -10,7 +10,7 @@ const EditCollectionContainer = ({ collection }) => {
   const router = useRouter()
 
   const onSubmit = async data => {
-    updateCollection(collection.id, pick(['name', 'description'], data))
+    await updateCollection(collection.id, pick(['name', 'description'], data))
       .run()
       .promise()
 

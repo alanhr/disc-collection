@@ -6,7 +6,7 @@ const DiscSubMenu = () => (
   <SubMenu
     links={[
       { href: '/disc', as: '/', text: 'Listar todos os discos' },
-      { href: '/disc/add', text: 'Adicionar um nova disco' },
+      { href: '/disc/add', text: 'Adicionar um novo disco' },
     ]}
   />
 )

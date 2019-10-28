@@ -8,7 +8,7 @@ const AddDiscContainer = () => {
   const router = useRouter()
 
   const onSubmit = async data => {
-    addDisc(data)
+    await addDisc(data)
       .run()
       .promise()
 

@@ -10,7 +10,7 @@ const EditdiscContainer = ({ disc }) => {
   const router = useRouter()
 
   const onSubmit = async data => {
-    updateDisc(disc.id, pick(['collectionId', 'name', 'singer'], data))
+    await updateDisc(disc.id, pick(['collectionId', 'name', 'singer'], data))
       .run()
       .promise()
 
