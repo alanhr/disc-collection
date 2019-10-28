@@ -6,8 +6,8 @@
 
 # Como rodar o projeto 🚅
 
-Para rodar no modo `dev` é necessario utilizar o comando `make build-mysql` para levantar o servidor
-e ensegida rode o comando `yarn dev` ou `yarn dev:watch`. Entretanto, caso queira rodar no modo `prod`
+Para rodar no modo `dev` é necessario utilizar o comando `make build-mysql` para levantar o banco de dados
+e em seguida rode o comando `yarn dev` ou `yarn dev:watch`. Entretanto, caso queira rodar no modo `prod`
 utilize o comando `make start`.
 
 O site fica disponivel na porta **3000**.
