@@ -5,8 +5,9 @@
 	"scripts": {
 		"dev": "cross-env NODE_ENV=development babel-node server/src/index.js",
 		"dev:watch": "nodemon",
-		"build": "yarn build:server && yarn build:next",
-		"build:next": "next build",
+    "build": "yarn clear && yarn build:server && yarn build:next",
+    "clear":"rimraf .server .next",
+		"build:next": "cross-env NODE_ENV=production next build",
 		"build:server": "cross-env NODE_ENV=production babel server/src --out-dir .server",
 		"start": "cross-env NODE_ENV=production node .server/index.js",
 		"test": "jest"
@@ -30,6 +31,7 @@
 		"react-dom": "16.11.0",
 		"react-final-form": "^6.3.0",
 		"react-table": "^7.0.0-beta.12",
+		"rimraf": "^3.0.0",
 		"styled-components": "^4.4.0",
 		"validatorjs": "^3.17.1"
 	},

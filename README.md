@@ -26,6 +26,6 @@ O site fica disponivel na porta **3000**.
 
 # Sobre o Desafio 🏁
 
-Infezlimente não consegui fazer todos os testes como gostaria 😭, porém fiz alguns para demostrar meu conhecimento.
+Infelizmente não consegui fazer todos os testes como gostaria 😭, porém fiz alguns para demostrar meu conhecimento.
 
 Para fazer o teste escolhi seguir o **atomic design** no front e utlizie um pouco de **functional programming** no back/front
