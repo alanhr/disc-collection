@@ -36,7 +36,7 @@ FieldGroup.propTypes = {
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
   type: PropTypes.string.isRequired,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   options: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.any,
