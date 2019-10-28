@@ -13,5 +13,18 @@ services:
       - '3306'
     volumes:
       - dic-db:/var/lib/mysql
+
+  site:
+    container_name: site
+    depends_on:
+      - db
+    build: ./
+    environment:
+      DB_HOST: 'db'
+    ports:
+      - '3000:3000'
+    links:
+      - db
+
 volumes:
   dic-db:

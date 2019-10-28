@@ -36,12 +36,12 @@ describe('RequestValidator', () => {
     )
 
     expect(resMock.status).toHaveBeenCalledWith(400)
-    expect(resMock.json).toHaveBeenCalledWith([
-      { error: { description: '"description" must be a string', name: '"name" is required' } },
-    ])
+    expect(resMock.json).toHaveBeenCalledWith({
+      error: { description: '"description" must be a string', name: '"name" is required' },
+    })
   })
 
-  test.only('should validation the body payload and call next', () => {
+  test('should validation the body payload and call next', () => {
     const nextMock = jest.fn()
     const resMock = {
       status: jest.fn().mockReturnThis(),

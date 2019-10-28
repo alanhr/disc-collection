@@ -1,5 +1,7 @@
 import joi from '@hapi/joi'
 
+require('dotenv').config()
+
 export default () => {
   const envVarsSchema = joi
     .object({
@@ -19,10 +21,10 @@ export default () => {
         .falsy('FALSE')
         .falsy('false')
         .default(true),
-      DB_HOST: joi.string().default('localhost'),
-      DB_USER: joi.string().default('disc'),
-      DB_PASSWORD: joi.string().default('disc@123'),
-      DB_NAME: joi.string().default('disc-collection-db'),
+      DB_HOST: joi.string().required(),
+      DB_USER: joi.string().required(),
+      DB_PASSWORD: joi.string().required(),
+      DB_NAME: joi.string().required(),
     })
     .unknown()
     .required()

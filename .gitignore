@@ -18,7 +18,6 @@
 
 # misc
 .DS_Store
-.env*
 
 # debug
 npm-debug.log*
